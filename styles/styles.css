@@ -44,3 +44,7 @@ button {
     display: flex;
     gap: 10px;
 }
+
+#clear-btn {
+    width: 200px;
+}
