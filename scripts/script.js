@@ -32,8 +32,23 @@ function operate(a, b, op) {
     }
 }
 
-let num1 = 0;
-let num2 = 0;
+function addToDisplay(num) {
+    if (display.textContent === "0") {
+        display.textContent = "";
+    }
+    display.textContent += num;
+    
+    if (operation === "") {
+        num1 = display.textContent;
+        console.log(`num1 = ${num1}`);
+    } else {
+        num2 = display.textContent;
+        console.log(`num2 = ${num2}`);
+    }
+}
+
+let num1 = "0";
+let num2 = "0";
 let operation = "";
 
 const btn0 = document.querySelector("#btn0");
@@ -49,3 +64,14 @@ const btn9 = document.querySelector("#btn9");
 
 const display = document.querySelector("#calc-display");
 display.textContent = "0";
+
+btn0.addEventListener("click", () => { addToDisplay("0"); })
+btn1.addEventListener("click", () => { addToDisplay("1"); })
+btn2.addEventListener("click", () => { addToDisplay("2"); })
+btn3.addEventListener("click", () => { addToDisplay("3"); })
+btn4.addEventListener("click", () => { addToDisplay("4"); })
+btn5.addEventListener("click", () => { addToDisplay("5"); })
+btn6.addEventListener("click", () => { addToDisplay("6"); })
+btn7.addEventListener("click", () => { addToDisplay("7"); })
+btn8.addEventListener("click", () => { addToDisplay("8"); })
+btn9.addEventListener("click", () => { addToDisplay("9"); })
