@@ -2,17 +2,45 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 300px;
+
+    width: 275px;
     border: 2px dashed blue;
+    background-color: lightblue;
+    padding: 10px;
 }
 
 #calc-display {
-    margin: 10px auto;
+    margin-bottom: 10px;
     padding: 10px;
     width: 250px;
     border: 1px solid black;
+    background-color: lightgray;
+
+    display: flex;
+    justify-content: end;
+    align-items: center;
 
     font-family: 'Courier New', Courier, monospace;
     font-size: 20px;
+    font-weight: bold;
     text-align: end;
+}
+
+button {
+    width: 60px;
+    height: 60px;
+    font-size: 18px;
+    margin: 0;
+}
+
+#button-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px
+}
+
+.button-row {
+    display: flex;
+    gap: 10px;
 }
