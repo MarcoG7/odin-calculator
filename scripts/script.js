@@ -6,7 +6,20 @@ function subtract(a, b) {
     return a - b;
 }
 
+function multiply(a, b) {
+    return a * b;
+}
+
+function divide(a, b) {
+    if (b === 0) { 
+        console.log(">> Cannot divide by 0");
+    }
+    return a / b;
+}
+
 let x = prompt("x = ");
 let y = prompt("y = ");
 console.log(`${x} + ${y} = ${add(x, y)}`);
 console.log(`${x} - ${y} = ${subtract(x, y)}`);
+console.log(`${x} * ${y} = ${multiply(x, y)}`);
+console.log(`${x} / ${y} = ${divide(x, y)}`);
