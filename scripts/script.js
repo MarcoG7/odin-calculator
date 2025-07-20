@@ -61,7 +61,7 @@ function setOperation(op) {
 }
 
 function performOperation() {
-    if (!operationDone) {
+    if (!operationDone && num1 != "0") {
         num1 = operate(num1, display.textContent, operation);
         operation = "";
         chain = false;
