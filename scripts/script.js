@@ -37,14 +37,20 @@ function addToDisplay(num) {
         display.textContent = "";
     }
     display.textContent += num;
-    
-    if (operation === "") {
-        num1 = display.textContent;
-        console.log(`num1 = ${num1}`);
-    } else {
-        num2 = display.textContent;
-        console.log(`num2 = ${num2}`);
-    }
+}
+
+function setOperation(op) {
+    num1 = display.textContent;
+    display.textContent = "0";
+    operation = op;
+}
+
+function performOperation() {
+    num2 = display.textContent;
+    num1 = operate(num1, num2, operation);
+    display.textContent = num1;
+    operation = "";
+    num2 = "0";
 }
 
 let num1 = "0";
@@ -65,13 +71,26 @@ const btn9 = document.querySelector("#btn9");
 const display = document.querySelector("#calc-display");
 display.textContent = "0";
 
-btn0.addEventListener("click", () => { addToDisplay("0"); })
-btn1.addEventListener("click", () => { addToDisplay("1"); })
-btn2.addEventListener("click", () => { addToDisplay("2"); })
-btn3.addEventListener("click", () => { addToDisplay("3"); })
-btn4.addEventListener("click", () => { addToDisplay("4"); })
-btn5.addEventListener("click", () => { addToDisplay("5"); })
-btn6.addEventListener("click", () => { addToDisplay("6"); })
-btn7.addEventListener("click", () => { addToDisplay("7"); })
-btn8.addEventListener("click", () => { addToDisplay("8"); })
-btn9.addEventListener("click", () => { addToDisplay("9"); })
+const btnAdd = document.querySelector("#add-btn");
+const btnSubtract = document.querySelector("#subtract-btn");
+const btnMultiply = document.querySelector("#multiply-btn");
+const btnDivide = document.querySelector("#divide-btn");
+const btnEqual = document.querySelector("#equal-btn");
+
+btn0.addEventListener("click", () => { addToDisplay("0"); });
+btn1.addEventListener("click", () => { addToDisplay("1"); });
+btn2.addEventListener("click", () => { addToDisplay("2"); });
+btn3.addEventListener("click", () => { addToDisplay("3"); });
+btn4.addEventListener("click", () => { addToDisplay("4"); });
+btn5.addEventListener("click", () => { addToDisplay("5"); });
+btn6.addEventListener("click", () => { addToDisplay("6"); });
+btn7.addEventListener("click", () => { addToDisplay("7"); });
+btn8.addEventListener("click", () => { addToDisplay("8"); });
+btn9.addEventListener("click", () => { addToDisplay("9"); });
+
+btnAdd.addEventListener("click", () => { setOperation("+") });
+btnSubtract.addEventListener("click", () => { setOperation("-") });
+btnMultiply.addEventListener("click", () => { setOperation("*") });
+btnDivide.addEventListener("click", () => { setOperation("/") });
+
+btnEqual.addEventListener("click", performOperation);
