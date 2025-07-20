@@ -33,36 +33,7 @@ function operate(a, b, op) {
 }
 
 
-function addToDisplay(num) {
-    if (operationDone) {
-        operationDone = false;
-        display.textContent = "";
-    }
-    else {
-        display.textContent = "";
-    }
-    display.textContent += num;
-}
 
-function setOperation(op) {
-    operationDone = false;
-
-    if (num1 == "0") {
-        operation = op;
-        num1 = display.textContent;
-        display.textContent = "0";
-    } else {
-        performOperation();
-        operation = op;
-    }
-}
-
-function performOperation() {
-    num1 = operate(num1, display.textContent, operation);
-    display.textContent = num1;
-    operation = "";
-    operationDone = true;
-}
 
 function clear() {
     num1 = "0";
