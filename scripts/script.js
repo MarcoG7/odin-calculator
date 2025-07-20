@@ -32,26 +32,9 @@ function operate(a, b, op) {
     }
 }
 
-function addToDisplay(num) {
-    if (display.textContent === "0") {
-        display.textContent = "";
-    }
-    display.textContent += num;
-}
 
-function setOperation(op) {
-    num1 = display.textContent;
-    display.textContent = "0";
-    operation = op;
-}
 
-function performOperation() {
-    num2 = display.textContent;
-    num1 = operate(num1, num2, operation);
-    display.textContent = num1;
-    operation = "";
-    num2 = "0";
-}
+
 
 let num1 = "0";
 let num2 = "0";
