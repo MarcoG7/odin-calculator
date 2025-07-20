@@ -33,6 +33,12 @@ function operate(a, b, op) {
 }
 
 
+function clear() {
+    num1 = "0";
+    num2 = "0";
+    operation = "";
+    display.textContent = "0";
+}
 
 
 
@@ -58,7 +64,10 @@ const btnAdd = document.querySelector("#add-btn");
 const btnSubtract = document.querySelector("#subtract-btn");
 const btnMultiply = document.querySelector("#multiply-btn");
 const btnDivide = document.querySelector("#divide-btn");
+
 const btnEqual = document.querySelector("#equal-btn");
+
+const btnClear = document.querySelector("#clear-btn");
 
 btn0.addEventListener("click", () => { addToDisplay("0"); });
 btn1.addEventListener("click", () => { addToDisplay("1"); });
@@ -77,3 +86,5 @@ btnMultiply.addEventListener("click", () => { setOperation("*") });
 btnDivide.addEventListener("click", () => { setOperation("/") });
 
 btnEqual.addEventListener("click", performOperation);
+
+btnClear.addEventListener("click", clear);
