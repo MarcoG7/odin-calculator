@@ -14,7 +14,12 @@ function divide(a, b) {
     if (b === 0) { 
         console.log(">> Cannot divide by 0");
     }
-    return a / b;
+    let res = a / b;
+    if (res % 1 !== 0) {
+        return (a / b).toFixed(2);
+    } else {
+        return a / b;
+    }
 }
 
 function operate(a, b, op) {
