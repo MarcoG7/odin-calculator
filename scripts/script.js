@@ -34,10 +34,9 @@ function operate(a, b, op) {
 
 
 function addToDisplay(num) {
-    if (operationDone) {
+    if (operationDone || chain) {
         display.textContent = "";
-    } else 
-    if (display.textContent == "0") {
+    } else if (display.textContent == "0") {
         display.textContent = "";
     }
     display.textContent += num;
@@ -51,9 +50,9 @@ function setOperation(op) {
         num1 = display.textContent;
     } else {
         num1 = operate(num1, display.textContent, operation);
+        display.textContent = num1;
         operation = op;
     }
-    display.textContent = "0";
 }
 
 function performOperation() {
