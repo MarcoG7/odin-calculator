@@ -33,20 +33,53 @@ function operate(a, b, op) {
 }
 
 
+function addToDisplay(num) {
+    if (operationDone) {
+        display.textContent = "";
+    } else 
+    if (display.textContent == "0") {
+        display.textContent = "";
+    }
+    display.textContent += num;
+}
 
+function setOperation(op) {
+    operationDone = false;
+    if (!chain) {
+        operation = op;
+        chain = true;
+        num1 = display.textContent;
+    } else {
+        num1 = operate(num1, display.textContent, operation);
+        operation = op;
+    }
+    display.textContent = "0";
+}
+
+function performOperation() {
+    if (!operationDone) {
+        num1 = operate(num1, display.textContent, operation);
+        operation = "";
+        chain = false;
+        operationDone = true;
+        display.textContent = num1;
+    }
+}
 
 function clear() {
     num1 = "0";
     num2 = "0";
     operation = "";
     display.textContent = "0";
+    chain = false;
+    operationDone = false;
 }
-
 
 
 let num1 = "0";
 let num2 = "0";
 let operation = "";
+let chain = false;
 let operationDone = false;
 
 const btn0 = document.querySelector("#btn0");
