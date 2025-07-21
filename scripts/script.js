@@ -39,11 +39,14 @@ function operate(a, b, op) {
 
 
 function appendNumber(num) {
-    if (display.textContent == "0" || shouldReset) {
+    if ((display.textContent == "0" || shouldReset) && num !== ".") {
         display.textContent = num;
         shouldReset = false;
-    } else {
+    } else if ((display.textContent == "0" || shouldReset) && num === ".") {
         display.textContent += num;
+        shouldReset = false;
+    } else if (num !== "." || !display.textContent.includes(".")) {
+            display.textContent += num;
     }
 }
 
