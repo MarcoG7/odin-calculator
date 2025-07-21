@@ -79,6 +79,14 @@ function performOperation() {
     }
 }
 
+function eraseNumber() {
+    if (display.textContent.length === 1) {
+        display.textContent = "0"
+    } else {
+        display.textContent = display.textContent.slice(0, -1);
+    }
+}
+
 function clear() {
     display.textContent = "0";
     num1 = null;
@@ -116,6 +124,7 @@ const btnDivide = document.querySelector("#divide-btn");
 
 const btnEqual = document.querySelector("#equal-btn");
 
+const btnErase = document.querySelector("#erase-btn");
 const btnClear = document.querySelector("#clear-btn");
 
 btn0.addEventListener("click", () => { appendNumber("0"); });
@@ -138,4 +147,5 @@ btnDivide.addEventListener("click", () => { setOperator("/") });
 
 btnEqual.addEventListener("click", performOperation);
 
+btnErase.addEventListener("click", eraseNumber);
 btnClear.addEventListener("click", clear);
