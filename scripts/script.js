@@ -12,7 +12,7 @@ function multiply(a, b) {
 
 function divide(a, b) {
     if (b === 0) { 
-        console.log(">> Cannot divide by 0");
+        return "Error: Division by 0";
     }
     let res = a / b;
     if (res % 1 !== 0) {
@@ -59,7 +59,14 @@ function setOperator(op) {
 function performOperation() {
     if (operator !== null && !shouldReset) {
         num2 = display.textContent;
-        display.textContent = operate(parseFloat(num1), parseFloat(num2), operator);
+        let res = operate(parseFloat(num1), parseFloat(num2), operator);
+        if (res[0] === "E") {
+            clear();
+            display.textContent = res;
+            shouldReset = true;
+            return ;
+        }
+        display.textContent = res;
         num1 = display.textContent;
         operator = null;
         shouldReset = true;
