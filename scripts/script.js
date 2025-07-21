@@ -149,3 +149,27 @@ btnEqual.addEventListener("click", performOperation);
 
 btnErase.addEventListener("click", eraseNumber);
 btnClear.addEventListener("click", clear);
+
+// Keyboard support
+document.addEventListener("keydown", (e) => { if (e.key === "0") { appendNumber("0"); } });
+document.addEventListener("keydown", (e) => { if (e.key === "1") { appendNumber("1"); } });
+document.addEventListener("keydown", (e) => { if (e.key === "2") { appendNumber("2"); } });
+document.addEventListener("keydown", (e) => { if (e.key === "3") { appendNumber("3"); } });
+document.addEventListener("keydown", (e) => { if (e.key === "4") { appendNumber("4"); } });
+document.addEventListener("keydown", (e) => { if (e.key === "5") { appendNumber("5"); } });
+document.addEventListener("keydown", (e) => { if (e.key === "6") { appendNumber("6"); } });
+document.addEventListener("keydown", (e) => { if (e.key === "7") { appendNumber("7"); } });
+document.addEventListener("keydown", (e) => { if (e.key === "8") { appendNumber("8"); } });
+document.addEventListener("keydown", (e) => { if (e.key === "9") { appendNumber("9"); } });
+
+document.addEventListener("keydown", (e) => { if (e.key === ".") { appendNumber("."); } } );
+
+document.addEventListener("keydown", (e) => { if (e.key === "+") { setOperator("+"); } } );
+document.addEventListener("keydown", (e) => { if (e.key === "-") { setOperator("-"); } } );
+document.addEventListener("keydown", (e) => { if (e.key === "*") { setOperator("*"); } } );
+document.addEventListener("keydown", (e) => { if (e.key === "/") { setOperator("/"); } } );
+
+document.addEventListener("keydown", (e) => { if (e.key === "Enter") { performOperation(); } } );
+
+document.addEventListener("keydown", (e) => { if (e.key === "Backspace") { eraseNumber(); } });
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") { clear(); } });
