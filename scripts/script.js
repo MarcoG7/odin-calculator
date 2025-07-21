@@ -57,12 +57,12 @@ function setOperator(op) {
 }
 
 function performOperation() {
-    if (!operationDone && num1 != "0") {
-        num1 = operate(num1, display.textContent, operation);
-        operation = "";
-        chain = false;
-        operationDone = true;
-        display.textContent = num1;
+    if (operator !== null && !shouldReset) {
+        num2 = display.textContent;
+        display.textContent = operate(parseFloat(num1), parseFloat(num2), operator);
+        num1 = display.textContent;
+        operator = null;
+        shouldReset = true;
     }
 }
 
