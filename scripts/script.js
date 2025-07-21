@@ -83,11 +83,10 @@ function clear() {
 }
 
 
-let num1 = "0";
-let num2 = "0";
-let operation = "";
-let chain = false;
-let operationDone = false;
+let num1 = null;
+let num2 = null;
+let operator = null;
+let shouldReset = false;
 
 const btn0 = document.querySelector("#btn0");
 const btn1 = document.querySelector("#btn1");
