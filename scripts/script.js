@@ -106,21 +106,21 @@ const btnEqual = document.querySelector("#equal-btn");
 
 const btnClear = document.querySelector("#clear-btn");
 
-btn0.addEventListener("click", () => { addToDisplay("0"); });
-btn1.addEventListener("click", () => { addToDisplay("1"); });
-btn2.addEventListener("click", () => { addToDisplay("2"); });
-btn3.addEventListener("click", () => { addToDisplay("3"); });
-btn4.addEventListener("click", () => { addToDisplay("4"); });
-btn5.addEventListener("click", () => { addToDisplay("5"); });
-btn6.addEventListener("click", () => { addToDisplay("6"); });
-btn7.addEventListener("click", () => { addToDisplay("7"); });
-btn8.addEventListener("click", () => { addToDisplay("8"); });
-btn9.addEventListener("click", () => { addToDisplay("9"); });
+btn0.addEventListener("click", () => { appendNumber("0"); });
+btn1.addEventListener("click", () => { appendNumber("1"); });
+btn2.addEventListener("click", () => { appendNumber("2"); });
+btn3.addEventListener("click", () => { appendNumber("3"); });
+btn4.addEventListener("click", () => { appendNumber("4"); });
+btn5.addEventListener("click", () => { appendNumber("5"); });
+btn6.addEventListener("click", () => { appendNumber("6"); });
+btn7.addEventListener("click", () => { appendNumber("7"); });
+btn8.addEventListener("click", () => { appendNumber("8"); });
+btn9.addEventListener("click", () => { appendNumber("9"); });
 
-btnAdd.addEventListener("click", () => { setOperation("+") });
-btnSubtract.addEventListener("click", () => { setOperation("-") });
-btnMultiply.addEventListener("click", () => { setOperation("*") });
-btnDivide.addEventListener("click", () => { setOperation("/") });
+btnAdd.addEventListener("click", () => { setOperator("+") });
+btnSubtract.addEventListener("click", () => { setOperator("-") });
+btnMultiply.addEventListener("click", () => { setOperator("*") });
+btnDivide.addEventListener("click", () => { setOperator("/") });
 
 btnEqual.addEventListener("click", performOperation);
 
