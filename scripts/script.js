@@ -78,8 +78,10 @@ function clear() {
     num2 = "0";
     operation = "";
     display.textContent = "0";
-    chain = false;
-    operationDone = false;
+    num1 = null;
+    num2 = null;
+    operator = null;
+    shouldReset = false;
 }
 
 
