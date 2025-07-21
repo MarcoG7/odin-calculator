@@ -48,15 +48,18 @@ function addToDisplay(num) {
 }
 
 function setOperation(op) {
-    operationDone = false;
-    if (!chain) {
-        operation = op;
-        chain = true;
-        num1 = display.textContent;
-    } else {
-        num1 = operate(num1, display.textContent, operation);
-        display.textContent = num1;
-        operation = op;
+    if (operation != op)
+    {
+        operationDone = false;
+        if (!chain) {
+            operation = op;
+            chain = true;
+            num1 = display.textContent;
+        } else {
+            num1 = operate(num1, display.textContent, operation);
+            display.textContent = num1;
+            operation = op;
+        }
     }
 }
 
