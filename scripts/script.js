@@ -67,9 +67,6 @@ function performOperation() {
 }
 
 function clear() {
-    num1 = "0";
-    num2 = "0";
-    operation = "";
     display.textContent = "0";
     num1 = null;
     num2 = null;
