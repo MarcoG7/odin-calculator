@@ -38,13 +38,13 @@ function operate(a, b, op) {
 }
 
 
-function addToDisplay(num) {
-    if (operationDone || chain) {
-        display.textContent = "";
-    } else if (display.textContent == "0") {
-        display.textContent = "";
+function appendNumber(num) {
+    if (display.textContent == "0" || shouldReset) {
+        display.textContent = num;
+        shouldReset = false;
+    } else {
+        display.textContent += num;
     }
-    display.textContent += num;
 }
 
 function setOperation(op) {
