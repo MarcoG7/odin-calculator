@@ -65,8 +65,11 @@ function performOperation() {
             display.textContent = res;
             shouldReset = true;
             return ;
+        } else if (res % 1 !== 0) {
+            display.textContent = parseFloat(res).toFixed(2);
+        } else {
+            display.textContent = res;
         }
-        display.textContent = res;
         num1 = display.textContent;
         operator = null;
         shouldReset = true;
@@ -98,6 +101,8 @@ const btn7 = document.querySelector("#btn7");
 const btn8 = document.querySelector("#btn8");
 const btn9 = document.querySelector("#btn9");
 
+const btnDecimal = document.querySelector("#decimal-btn");
+
 const display = document.querySelector("#calc-display");
 display.textContent = "0";
 
@@ -120,6 +125,8 @@ btn6.addEventListener("click", () => { appendNumber("6"); });
 btn7.addEventListener("click", () => { appendNumber("7"); });
 btn8.addEventListener("click", () => { appendNumber("8"); });
 btn9.addEventListener("click", () => { appendNumber("9"); });
+
+btnDecimal.addEventListener("click", () => { appendNumber("."); })
 
 btnAdd.addEventListener("click", () => { setOperator("+") });
 btnSubtract.addEventListener("click", () => { setOperator("-") });
